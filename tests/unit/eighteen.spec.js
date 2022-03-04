@@ -1,9 +1,23 @@
-import { shallowMount } from "@vue/test-utils";
-import ExerciseEighteen from "@components/exercises/ExerciseEighteen";
+import { mount, shallowMount } from "@vue/test-utils";
+import ExerciseEighteen from "@/components/exercises/ExerciseEighteen";
 
-let wrapper = null;
+describe("Test component ExerciseEighteen", () => {
+  test("Component ExerciseEighteen exist?", () => {
+    const wrapper = shallowMount(ExerciseEighteen);
+    expect(wrapper.exists()).toBe(true);
+  });
 
-beforeEach(() => {
+  test("This id exist in the component?", () => {
+    const wrapper = mount(ExerciseEighteen);
+
+    expect(wrapper.attributes('id')).toBe('result')
+    expect(wrapper.attributes('class')).toBe('container')
+  });
+});
+
+
+
+/* beforeEach(() => {
   wrapper = shallowMount(ExerciseEighteen);
 });
 
@@ -18,7 +32,7 @@ test("ExerciseEighteen", async () => {
 
   expect(input.element.value).toBe(8);
 });
-
+ */
 // import { shallowMount } from "@vue/test-utils";
 // import ExerciseEighteen from "@components/ExerciseEighteen";
 
